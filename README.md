@@ -1,0 +1,1 @@
+# vertexai-pipeline-image-version-switch
