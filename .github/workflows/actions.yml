@@ -1,0 +1,40 @@
+name: Vertex AI Pipeline Image Version Switch
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install poetry
+          poetry install
+
+      - name: Build image and push
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          push: true
+          tags: gcr.io/hogehoge/vertexai-pipeline-image-version-switch:${{ github.sha }}
+
+      - name: make JSON file
+        run: |
+          poetry run python pipeline.py
+          cat ./vertexai-pipeline-image-version-switch.json
+        env:
+          PIPELINE_IMAGE_TAG: ${{ github.sha }}
+
