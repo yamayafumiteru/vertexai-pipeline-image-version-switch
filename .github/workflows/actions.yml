@@ -21,6 +21,7 @@ jobs:
       - name: Install dependencies
         run: |
           cd /home/runner/work/vertexai-pipeline-image-version-switch/vertexai-pipeline-image-version-switch/
+          mkdir vertexai_pipeline_image_version_switch
           python -m pip install --upgrade pip
           pip install poetry
           poetry install
