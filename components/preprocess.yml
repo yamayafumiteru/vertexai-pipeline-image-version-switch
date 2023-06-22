@@ -1,0 +1,9 @@
+name: preprocess
+description: Preprocess raw data
+inputs:
+  - {name: dataset, type: Dataset, description: 'Processed dataset (train/val/test) URI'}
+outputs:
+  - {name: preprocess_dataset, type: Dataset, description: 'Processed dataset'}
+implementation:
+  container:
+    image: gcr.io/hogehoge/vertexai-pipeline-image-version-switch

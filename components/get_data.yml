@@ -1,0 +1,7 @@
+name: get-data
+outputs:
+  - {name: dataset,type: Dataset}
+implementation:
+  container:
+    image: gcr.io/hogehoge/vertexai-pipeline-image-version-switch
+    # command: ["python", "get_data.py"] などでデータ取得するコマンドを実行する
