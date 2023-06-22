@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "vertexai-pipeline-image-version-switch"
+version = "0.1.0"
+description = ""
+authors = ["yamayafumiteru <fumiteru322@gmail.com>"]
+readme = "README.md"
+packages = [{include = "vertexai_pipeline_image_version_switch"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+kfp = "^1.8.19"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
