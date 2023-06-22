@@ -4,7 +4,6 @@ version = "0.1.0"
 description = ""
 authors = ["yamayafumiteru <fumiteru322@gmail.com>"]
 readme = "README.md"
-packages = [{include = "vertexai_pipeline_image_version_switch"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
